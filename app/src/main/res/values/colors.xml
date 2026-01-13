@@ -1,0 +1,12 @@
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green_primary">#2A7F68</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="background_gray">#F5F5F5</color>
+    <color name="divider_color">#E0E0E0</color>
+    <color name="icon_tint">#757575</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_star">#EF6C00</color>
+</resources>

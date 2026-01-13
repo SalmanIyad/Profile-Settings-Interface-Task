@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Profile-Settings-Interface-App</string>
+    
+    <string name="user_name">Salman Abualhin</string>
+    <string name="user_location">Khan-Younis, Palestine</string>
+    
+    <string name="label_balance">Balance</string>
+    <string name="value_balance">15,565.75</string>
+    <string name="label_orders">Orders</string>
+    <string name="value_orders">32</string>
+    <string name="label_spent">Total Spent</string>
+    <string name="value_spent">1,595.5</string>
+
+    <string name="menu_personal_info">Personal Information</string>
+    <string name="menu_your_order">Your Order</string>
+    <string name="menu_favourites">Your Favourites</string>
+    <string name="menu_payment">Payment</string>
+    <string name="menu_recommended_shops">Recommended Shops</string>
+    <string name="menu_nearest_shop">Nearest Shop</string>
+    <string name="menu_logout">Logout</string>
+
+    <string name="btn_profile">Profile</string>
+
+    <string name="desc_back">Back</string>
+    <string name="desc_edit_profile">Edit Profile</string>
+    <string name="desc_star">Star</string>
+    <string name="desc_next">Next</string>
+    <string name="desc_home">Home</string>
+    <string name="desc_notifications">Notifications</string>
+    <string name="desc_cart">Cart</string>
+    <string name="desc_profile_icon">Profile Icon</string>
+</resources>

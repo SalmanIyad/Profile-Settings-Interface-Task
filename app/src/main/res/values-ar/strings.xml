@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تطبيق واجهة إعدادات الملف الشخصي</string>
+
+    <string name="user_name">سلمان أبو الحن</string>
+    <string name="user_location">خان يونس، فلسطين</string>
+
+    <string name="label_balance">الرصيد</string>
+    <string name="value_balance">15,565.75</string>
+    <string name="label_orders">الطلبات</string>
+    <string name="value_orders">32</string>
+
+    <string name="label_spent">إجمالي المصروفات</string>
+    <string name="value_spent">1,595.5</string>
+
+    <string name="menu_personal_info">المعلومات الشخصية</string>
+    <string name="menu_your_order">طلباتك</string>
+    <string name="menu_favourites">المفضلة</string>
+    <string name="menu_payment">الدفع</string>
+
+    <string name="menu_recommended_shops">متاجر موصى بها</string>
+    <string name="menu_nearest_shop">أقرب متجر</string>
+    <string name="menu_logout">تسجيل الخروج</string>
+
+    <string name="btn_profile">الملف الشخصي</string>
+
+    <string name="desc_back">رجوع</string>
+
+    <string name="desc_edit_profile">تعديل الملف الشخصي</string>
+    <string name="desc_star">نجمة</string>
+    <string name="desc_next">التالي</string>
+    <string name="desc_home">الرئيسية</string>
+    <string name="desc_notifications">الإشعارات</string>
+    <string name="desc_cart">السلة</string>
+    <string name="desc_profile_icon">أيقونة الملف الشخصي</string>
+</resources>

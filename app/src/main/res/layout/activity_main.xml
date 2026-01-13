@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Relative Layout Screen -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Top Bar -->
+     <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/icon_size_xlarge"
+        android:layout_height="@dimen/icon_size_xlarge"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_arrow_back"
+        android:contentDescription="@string/desc_back"
+        app:tint="@color/text_primary" />
+
+    <FrameLayout
+        android:id="@+id/btnEditParams"
+        android:layout_width="@dimen/icon_size_xlarge"
+        android:layout_height="@dimen/icon_size_xlarge"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:background="@drawable/bg_icon_box"
+        android:padding="12dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_edit"
+            app:tint="@color/green_primary"
+            android:contentDescription="@string/desc_edit_profile"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <!-- Content Container (Above Bottom Nav) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btnBack"
+        android:layout_above="@+id/bottomNav">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <!-- Profile Image -->
+            <!-- Profile Image -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardProfile"
+                android:layout_width="@dimen/profile_image_size"
+                android:layout_height="@dimen/profile_image_size"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_large"
+                app:cardCornerRadius="@dimen/profile_corner_radius"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/user_name"
+                    android:src="@drawable/profile_image"
+                    tools:src="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Stars Rating -->
+            <LinearLayout
+                android:id="@+id/layoutStars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardProfile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_star"
+                    android:contentDescription="@string/desc_star"
+                    app:tint="@color/color_star" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="@color/color_star"
+                    android:contentDescription="@string/desc_star"
+                    android:layout_marginStart="4dp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="@color/color_star"
+                    android:contentDescription="@string/desc_star"
+                    android:layout_marginStart="4dp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="@color/color_star"
+                    android:contentDescription="@string/desc_star"
+                    android:layout_marginStart="4dp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="@color/color_star"
+                    android:contentDescription="@string/desc_star"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutStars"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="@string/user_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xlarge"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/user_location"
+                style="@style/MenuTextStyle" />
+
+            <!-- Stats Cards
+             -->
+            <LinearLayout
+                android:id="@+id/cardStatsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvLocation"
+                android:layout_marginTop="24dp"
+                android:baselineAligned="false"
+                android:paddingHorizontal="24dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <!-- Balance -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_green"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingVertical="16dp"
+                    android:paddingHorizontal="4dp"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_balance"
+                        style="@style/StatsLabelStyle"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="@string/value_balance"
+                        style="@style/StatsValueStyle" />
+                </LinearLayout>
+
+                <!-- Orders -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_green"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingVertical="16dp"
+                    android:paddingHorizontal="4dp"
+                    android:layout_marginHorizontal="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_orders"
+                        style="@style/StatsLabelStyle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/value_orders"
+                        style="@style/StatsValueStyle"
+                        android:layout_marginTop="@dimen/margin_small" />
+                </LinearLayout>
+
+                <!-- Spent -->
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_green"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingVertical="16dp"
+                    android:paddingHorizontal="4dp"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_spent"
+                        style="@style/StatsLabelStyle"
+                        android:gravity="center" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="@string/value_spent"
+                        style="@style/StatsValueStyle" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Menu Items Lst -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardStatsRow"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp"
+                android:paddingHorizontal="24dp">
+
+                <!-- Personal Info -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="12dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:id="@+id/icon1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_person"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/menu_personal_info"
+                        app:tint="@color/green_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menu_personal_info"
+                        style="@style/MenuTextStyle"
+                        android:layout_toEndOf="@+id/icon1"
+                        android:layout_toStartOf="@+id/chevron1"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_centerVertical="true" />
+
+                    <ImageView
+                        android:id="@+id/chevron1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron_right"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/desc_next"
+                        app:tint="@color/text_secondary" />
+            </RelativeLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color"/>
+
+            <!-- Your Orders -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="12dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/icon2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_shopping_cart"
+                    app:tint="@color/green_primary"
+                    android:contentDescription="@string/menu_your_order"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_your_order"
+                    style="@style/MenuTextStyle"
+                    android:layout_toEndOf="@+id/icon2"
+                    android:layout_toStartOf="@+id/chevron2"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/chevron2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary"
+                    android:contentDescription="@string/desc_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color"/>
+
+            <!-- Favourits -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="12dp"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:id="@+id/icon3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_favorite"
+                    app:tint="@color/green_primary"
+                    android:contentDescription="@string/menu_favourites"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_favourites"
+                    style="@style/MenuTextStyle"
+                    android:layout_toEndOf="@+id/icon3"
+                    android:layout_toStartOf="@+id/chevron3"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/chevron3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary"
+                    android:contentDescription="@string/desc_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color"/>
+
+            <!-- Payment -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="12dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/icon4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_payment"
+                    app:tint="@color/green_primary"
+                    android:contentDescription="@string/menu_payment"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_payment"
+                    style="@style/MenuTextStyle"
+                    android:layout_toEndOf="@+id/icon4"
+                    android:layout_toStartOf="@+id/chevron4"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/chevron4"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary"
+                    android:contentDescription="@string/desc_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color"/>
+
+            <!-- Recommended -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="12dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/icon5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_store"
+                    app:tint="@color/green_primary"
+                    android:contentDescription="@string/menu_recommended_shops"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_recommended_shops"
+                    style="@style/MenuTextStyle"
+                    android:layout_toEndOf="@+id/icon5"
+                    android:layout_toStartOf="@+id/chevron5"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/chevron5"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary"
+                    android:contentDescription="@string/desc_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color"/>
+
+            <!-- Nearest -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="12dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/icon6"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_store"
+                    app:tint="@color/green_primary"
+                    android:contentDescription="@string/menu_nearest_shop"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_nearest_shop"
+                    style="@style/MenuTextStyle"
+                    android:layout_toEndOf="@+id/icon6"
+                    android:layout_toStartOf="@+id/chevron6"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/chevron6"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary"
+                    android:contentDescription="@string/desc_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color"/>
+
+            <!-- Logout -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="12dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/icon7"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_logout"
+                    app:tint="@color/text_secondary"
+                    android:contentDescription="@string/menu_logout"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_logout"
+                    style="@style/MenuTextStyle"
+                    android:layout_toEndOf="@+id/icon7"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_centerVertical="true"/>
+          </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
+
+<!-- Btm Nav -->
+<LinearLayout
+    android:id="@+id/bottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#F8F8F8"
+    android:gravity="center_vertical"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="24dp">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_home"
+        android:contentDescription="@string/desc_home"
+        app:tint="@color/icon_tint" />
+
+      <ImageView
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_bell"
+        android:contentDescription="@string/desc_notifications"
+        app:tint="@color/icon_tint" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_shopping_cart"
+        android:contentDescription="@string/desc_cart"
+        app:tint="@color/icon_tint" />
+
+    <!-- Profile Button -Active-->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2.5"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_rounded_green"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_person"
+            android:contentDescription="@string/desc_profile_icon"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/btn_profile"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
